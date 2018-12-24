@@ -81,3 +81,15 @@ Publicar los assets
 npm run dev
 npm run watch
 ```
+
+## Ejecutar migraciones
+
+Configurar los parámetros de base de datos en el archivo .env
+DB_DATABASE=nombre_base-de-datos
+DB_USERNAME=nombre_usuario
+DB_PASSWORD=password
+
+Ejecutar las migraciones
+```sh
+php artisan migrate
+```
