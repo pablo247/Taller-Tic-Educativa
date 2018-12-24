@@ -165,3 +165,19 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/node,sass,windows,laravel,composer,visualstudiocode,linux
+
+# Star ignore files user
+
+# public Folder
+public/css/*
+public/js/*
+public/images/*
+public/mix-manifest.json
+
+!public/css/index.html
+!public/js/index.html
+!public/images/index.html
+
+package-lock.json
+
+# End ignore files user

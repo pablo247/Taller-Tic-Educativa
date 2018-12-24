@@ -1,6 +1,3 @@
-
-window._ = require('lodash');
-
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -10,7 +7,11 @@ window._ = require('lodash');
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-sass');
+    window.UIkit = require('uikit');
+    let Icons = require('uikit/dist/js/uikit-icons');
+    
+    // loads the Icon plugin
+    UIkit.use(Icons);
 } catch (e) {}
 
 /**
