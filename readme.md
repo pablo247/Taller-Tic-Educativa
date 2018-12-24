@@ -56,3 +56,28 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Configuración Inicial del Proyecto
+
+Copiar el archivo .env.example en la misma carpeta y renombrarlos por .env
+
+Instalar los paquetes con Composer
+```sh
+composer install
+```
+
+Generar llave de la aplicación manualmente si el comando anterior no la genero
+```sh
+php artisan key:generate
+```
+
+Instalar los paquetes con NPM
+```sh
+npm install
+```
+
+Publicar los assets
+```sh
+npm run dev
+npm run watch
+```
