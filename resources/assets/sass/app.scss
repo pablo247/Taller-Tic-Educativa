@@ -4,7 +4,6 @@
 // config
 @import "config/functions";
 @import "config/variables";
-@import "config/mixins";
 
 // End de Arquitectura SMACSS combinada con ITCSS
 // ####################################################################################
@@ -22,6 +21,23 @@
 
 // 3. Your custom mixin overwrites.
 // @mixin hook-card() { color: #000; }
+
+// End Framework UIKit
+// ####################################################################################
+
+
+// ####################################################################################
+// Inicio de Arquitectura SMACSS combinada con ITCSS
+
+// config
+@import "config/mixins";
+
+// End de Arquitectura SMACSS combinada con ITCSS
+// ####################################################################################
+
+
+// ####################################################################################
+// Star Framework UIKit
 
 // 4. Import UIkit.
 @import "~uikit/src/scss/uikit-theme.scss";

@@ -1,0 +1,16 @@
+// ####################################################################################
+// Star Framework UIKit
+
+@mixin hook-article-meta(){
+
+    a { color: $global-link-color; }
+
+    a:hover {
+        color: $global-link-hover-color;
+        text-decoration: none;
+    }
+
+}
+
+// End Framework UIKit
+// ####################################################################################

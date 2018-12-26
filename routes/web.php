@@ -18,4 +18,5 @@ Route::get('/', function () {
 # Rutas del Layout de la Aplicaión
 Route::prefix('template')->group(function () {
     Route::view('/blog', 'template.blog.index');
+    Route::view('/article', 'template.article.index');
 });
