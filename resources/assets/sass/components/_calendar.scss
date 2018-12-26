@@ -4,50 +4,105 @@ $height-calendar: 50px;
 {
     display: flex;
     width: 90%;
+
+    &__button
+    {
+        font-weight: bold;
+        height: $height-calendar;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 50px;
+    }
 }
 
-.calendar__button
-{
-    font-weight: bold;
-    height: $height-calendar;
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 50px;
-}
 
 .dates
 {
     align-self: center;
     display: inline-block;
     width: calc(100% - 120px);
-}
-
-.dates .uk-table { display: flex; }
-
-.dates-overflow--hidden{ overflow: hidden; }
-
-.dates__item
-{
-    height: $height-calendar;
-    white-space: nowrap;
-}
-
-.dates__item--first,
-.dates__item--end
-{
-    display: block;
-    width: 1000px;
-    max-width: 1000px;
-}
-
-.dates__item--selected{ background: $global-primary-background;}
-
-.dates__link--selected { color: #FFF; }
-
-.date__link
-{
-    display: block;
-    width: 80px;
+    
+    .uk-table { display: flex; }
+    
+    &-overflow--hidden{ overflow: hidden; }
+    
+    &__item
+    {
+        height: $height-calendar;
+        white-space: nowrap;
+        
+        &--first,
+        &--end
+        {
+            display: block;
+            width: 1000px;
+            max-width: 1000px;
+        }
+        
+        &--selected{ background: $global-primary-background;}
+    }
+    
+    &__link
+    {
+        display: block;
+        width: 80px;
+        &--selected { color: #FFF; }
+    }
 }
 
 td.dates__item { vertical-align: middle; }
+
+
+.timeline
+{
+    list-style: none;
+    padding-left: 0;
+    padding-top: 30px;
+    position: relative;
+
+    &::before
+    {
+        background: $global-primary-background;
+        bottom: 0;
+        border-radius: 2px;
+        content: '';
+        left: 50%;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        width: 4px;
+    }
+
+    &__item
+    {
+        padding-top: 15px;
+        position: relative;
+
+        @media (min-width: $breakpoint-medium)
+        {
+            &:nth-child(even) .card
+            {
+                left: calc(50% + 30px);
+            }
+            
+            &:nth-child(odd) .card
+            {
+                right: calc(50% + 30px);
+            }
+        }
+    }
+}
+
+.day
+{
+    height: 30px;
+    left: calc(50% - 13px);
+    position: absolute;
+    top: 0;
+    width: 30px;
+
+    @media (min-width: $breakpoint-medium)
+    {
+        top: 50%;
+    }
+}

@@ -1,0 +1,11 @@
+.card
+{
+	background: #e2e2e2;
+	border-radius: 5pt;
+
+	&__image
+	{
+		border-top-left-radius: 5pt;
+		border-top-right-radius: 5pt;
+	}
+}
