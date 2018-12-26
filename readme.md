@@ -82,6 +82,11 @@ npm run dev
 npm run watch
 ```
 
+Instalar scrips para minificar imágenes
+```sh
+npm install --save-dev imagemin-webpack-plugin copy-webpack-plugin imagemin-mozjpeg
+```
+
 ## Ejecutar migraciones
 
 Configurar los parámetros de base de datos en el archivo .env

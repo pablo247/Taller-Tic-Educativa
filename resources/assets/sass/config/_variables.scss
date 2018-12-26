@@ -1,0 +1,19 @@
+// ####################################################################################
+// Star Framework UIKit
+
+// Custom variables and variable overwrites.
+$global-primary-background: #09ACAF;
+$global-link-color: #09ACAF;
+$global-link-hover-color: darken(#09ACAF, 10);
+$global-secondary-background: #62C09E;
+$global-color: #434242;
+$global-muted-background: #868686;
+$global-border: #CCCCCC;
+$global-danger-background: #f0506e;
+
+// End Framework UIKit
+// ####################################################################################
+
+
+
+$background-header-footer: $global-color;
