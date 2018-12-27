@@ -33,25 +33,30 @@
             <div class="about uk-section">
                 <div class="uk-container">
                     <div class="" uk-grid>
-                        <div class="uk-width-1-1 uk-width-1-3@s">
-                            <div class="uk-card uk-card-default uk-card-body">
-                                Redes Sociales
+                        <div class="about__social-networks uk-width-1-1 uk-width-1-5@m">
+                            <div class="about__social-networks--direction uk-flex uk-flex-wrap">
+                                <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+                                <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+                                <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="linkedin"></a>
+                                <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="github"></a>
                             </div>
                         </div>
-                        <div class="uk-width-1-1 uk-width-2-3@s">
-                            <div class="uk-card uk-card-default uk-card-body">
-                                <p>Bessie Parker | developer</p>
-                            </div>
+                        <div class="uk-width-1-1 uk-width-4-5@m">
+                            <h1>Bessie Parker | <span class="uk-text-bold uk-text-middle uk-h4">Developer</span></h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ullam, eaque omnis repellendus inventore suscipit sapiente magnam quae, possimus earum odio vitae velit repellat dolores error quibusdam, harum blanditiis nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, autem voluptatum laborum tempora laudantium quaerat doloremque ratione ipsum ipsa odit obcaecati earum qui ad fugiat sunt, voluptate cupiditate, quia quibusdam?</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="skills uk-section">
                 <div class="uk-container">Skills</div>
             </div>
+            <hr>
             <div class="portfolio uk-section">
                 <div class="uk-container">Portfolio</div>
             </div>
+            <hr>
             <div class="contact uk-section">
                 <div class="uk-container">Contact</div>
             </div>

@@ -11,5 +11,36 @@
 		position: absolute;
 		right: calc(50% - 100px);
 		width: 200px;
+
+		@media (min-width: $breakpoint-medium)
+        {
+			right: initial;
+		}
 	}
+}
+
+.about__social-networks
+{
+	margin-top: $margin-xlarge-margin;
+	
+	@media (min-width: $breakpoint-medium)
+	{
+		margin-top: $margin-large-margin;
+	}
+
+	&--direction
+	{
+		justify-content: center;
+		
+		@media (min-width: $breakpoint-medium)
+		{
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+}
+
+.uk-icon-button
+{
+	background: transparent;
 }
