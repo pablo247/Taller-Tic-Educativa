@@ -64,64 +64,64 @@
 			<ul class="timeline">
 				<li class="timeline__item">
 					<span class="uk-badge day">30</span>
-					<div class="card uk-card uk-card-small uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-						<div class="card__image uk-card-media-left uk-cover-container">
+					<div class="card uk-card uk-card-small uk-grid-collapse uk-margin" uk-grid>
+						<div class="card__image uk-card-media-left uk-cover-container uk-width-1-3@s">
 							<img src="/images/image_article.jpg" alt="" uk-cover>
 							<canvas width="200" height="150"></canvas>
 						</div>
-						<div>
+						<div class="uk-width-2-3@s">
 							<div class="uk-card-body">
 								<h3 class="uk-card-title"><a href="#">Article Title</a></h3>
-								<span class="uk-text-left uk-text-muted uk-text-small">Septiembre 22, 2018</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+								<p class="uk-article-meta uk-text-left">Septiembre 30, 2018.</p>
+								<p class="uk-text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li class="timeline__item">
 					<span class="uk-badge day">3</span>
-					<div class="card uk-card uk-card-small uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-						<div class="card__image uk-flex-last@s uk-card-media-right uk-cover-container">
+					<div class="card uk-card uk-card-small uk-grid-collapse uk-margin" uk-grid>
+						<div class="card__image uk-flex-last@s uk-card-media-right uk-cover-container uk-width-1-3@s">
 							<img src="/images/image_article.jpg" alt="" uk-cover>
 							<canvas width="200" height="150"></canvas>
 						</div>
-						<div>
+						<div class="uk-width-2-3@s">
 							<div class="uk-card-body">
 								<h3 class="uk-card-title"><a href="#">Article Title</a></h3>
-								<span class="uk-text-left uk-text-muted uk-text-small">Septiembre 22, 2018</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+								<p class="uk-article-meta uk-text-left">Septiembre 30, 2018.</p>
+								<p class="uk-text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li class="timeline__item">
 					<span class="uk-badge day">2</span>
-					<div class="card uk-card uk-card-small uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-						<div class="card__image uk-card-media-left uk-cover-container">
+					<div class="card uk-card uk-card-small uk-grid-collapse uk-margin" uk-grid>
+						<div class="card__image uk-card-media-left uk-cover-container uk-width-1-3@s">
 							<img src="/images/image_article.jpg" alt="" uk-cover>
 							<canvas width="200" height="150"></canvas>
 						</div>
-						<div>
+						<div class="uk-width-2-3@s">
 							<div class="uk-card-body">
 								<h3 class="uk-card-title"><a href="#">Article Title</a></h3>
-								<span class="uk-text-left uk-text-muted uk-text-small">Septiembre 22, 2018</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+								<p class="uk-article-meta uk-text-left">Septiembre 30, 2018.</p>
+								<p class="uk-text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
 							</div>
 						</div>
 					</div>
 				</li>
 				<li class="timeline__item">
 					<span class="uk-badge day">1</span>
-					<div class="card uk-card uk-card-small uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-						<div class="card__image uk-flex-last@s uk-card-media-right uk-cover-container">
+					<div class="card uk-card uk-card-small uk-grid-collapse uk-margin" uk-grid>
+						<div class="card__image uk-flex-last@s uk-card-media-right uk-cover-container uk-width-1-3@s">
 							<img src="/images/image_article.jpg" alt="" uk-cover>
 							<canvas width="200" height="150"></canvas>
 						</div>
-						<div>
+						<div class="uk-width-2-3@s">
 							<div class="uk-card-body">
 								<h3 class="uk-card-title"><a href="#">Article Title</a></h3>
-								<span class="uk-text-left uk-text-muted uk-text-small">Septiembre 22, 2018</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+								<p class="uk-article-meta uk-text-left">Septiembre 30, 2018.</p>
+								<p class="uk-text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
 							</div>
 						</div>
 					</div>

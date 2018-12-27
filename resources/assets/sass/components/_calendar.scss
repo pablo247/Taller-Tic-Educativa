@@ -78,6 +78,27 @@ td.dates__item { vertical-align: middle; }
         padding-top: 15px;
         position: relative;
 
+        @media (min-width: $breakpoint-small)
+        {
+            &:nth-child(even) .card
+            {
+                &__image
+                {
+                    border-top-left-radius: 0;
+                    border-bottom-right-radius: 5pt;
+                }
+            }
+
+            &:nth-child(odd) .card
+            {
+                &__image
+                {
+                    border-top-right-radius: 0;
+                    border-bottom-left-radius: 5pt;
+                }
+            }
+        }
+
         @media (min-width: $breakpoint-medium)
         {
             &:nth-child(even) .card
