@@ -19,4 +19,5 @@ Route::get('/', function () {
 Route::prefix('template')->group(function () {
     Route::view('/blog', 'template.blog.index');
     Route::view('/article', 'template.article.index');
+    Route::view('/cv', 'template.cv.index');
 });

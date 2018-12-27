@@ -1,0 +1,15 @@
+.about-image
+{
+	padding: 0;
+	position: relative;
+
+	&__image
+	{
+		border: 4px solid #FFF;
+		bottom: -100px;
+		height: 200px;
+		position: absolute;
+		right: calc(50% - 100px);
+		width: 200px;
+	}
+}
