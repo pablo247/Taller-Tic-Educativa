@@ -98,3 +98,10 @@ Ejecutar las migraciones
 ```sh
 php artisan migrate
 ```
+
+## Crear autenticación de Laravel
+
+Con el siguiente comando se generan los rutas, modelos, controladores y vistas para la migración que viene por defecto con laravel
+```sh
+php artisan make:auth
+```

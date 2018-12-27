@@ -21,3 +21,7 @@ Route::prefix('template')->group(function () {
     Route::view('/article', 'template.article.index');
     Route::view('/cv', 'template.cv.index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
