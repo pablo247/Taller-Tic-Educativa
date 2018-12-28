@@ -37,7 +37,9 @@ mix.options({
 });
 
 mix.js('resources/assets/js/app.js', 'public/js').sourceMaps()
-   .sass('resources/assets/sass/app.scss', 'public/css').sourceMaps();
+   .sass('resources/assets/sass/app.scss', 'public/css').sourceMaps()
+   .sass('resources/assets/sass/app_admin.scss', 'public/css').sourceMaps()
+   .js('resources/assets/js/app_admin.js', 'public/js').sourceMaps();
 
 mix.browserSync({
    proxy: 'local.ticeducativa.com'
