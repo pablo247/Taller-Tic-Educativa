@@ -1,5 +1,7 @@
 @extends('layout.administrator.layout')
 
+@section('title', 'Dashboard | TIC Educativa')
+
 @section('account')
 
 	<li class="dropdown user user-menu">
@@ -61,7 +63,7 @@
 @endsection
 
 
-@section('content')
+@section('content_header')
 
 	<h1>
 		Page Header
@@ -72,4 +74,8 @@
 		<li class="active">Here</li>
 	</ol>
 	
+@endsection
+
+@section('content')
+
 @endsection

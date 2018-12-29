@@ -1,6 +1,8 @@
 @extends('layout.administrator.login')
 {{-- @extends('layouts.app') --}}
 
+@section('title', 'Log in | TIC Educativa')
+
 {{-- @section('content')
 <div class="container">
     <div class="row">

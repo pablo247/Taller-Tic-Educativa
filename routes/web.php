@@ -15,13 +15,31 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-# Rutas del Layout de la Aplicaión
+# Rutas del Layout de la Aplicaión (Páginas Estaticas)
 Route::prefix('template')->group(function () {
+
     Route::view('/blog', 'template.blog.index');
     Route::view('/article', 'template.article.index');
     Route::view('/cv', 'template.cv.index');
+    Route::view('/administrator', 'template.administrator.dashboard');
+
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+#-------------------------------------------------------------
+#
+# Inicio de rutas del aplicativo
+#
+#-------------------------------------------------------------
+
+Route::prefix('administrator')->group(function () {
+
+    Auth::routes();
+    Route::match(['get', 'post'], 'register', function(){ 
+        return redirect('/'); 
+    });
+    
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+});
+

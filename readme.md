@@ -99,6 +99,21 @@ Ejecutar las migraciones
 php artisan migrate
 ```
 
+Si al ejecutar la migración marca el siguiente error:
+
+SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes
+
+Se debe agregar el siguiente código en el archivo "app\Providers\AppServiceProvider.php" dentro de la función boot()
+```sh
+Schema::defaultStringLength(191);
+```
+
+Crear usuario por consola Tinker
+```sh
+php artisan tinker
+User::create(['nombre'=>'Pablo', 'apellido'=>'De Jesús', 'correo'=>'dlux.ap@gmail.com', 'usuario'=>'dlux', 'password'=>bcrypt('123456')]);
+```
+
 ## Crear autenticación de Laravel
 
 Con el siguiente comando se generan los rutas, modelos, controladores y vistas para la migración que viene por defecto con laravel
