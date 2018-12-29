@@ -111,7 +111,7 @@ Schema::defaultStringLength(191);
 Crear usuario por consola Tinker
 ```sh
 php artisan tinker
-User::create(['nombre'=>'Pablo', 'apellido'=>'De Jesús', 'correo'=>'dlux.ap@gmail.com', 'usuario'=>'dlux', 'password'=>bcrypt('123456')]);
+User::create(['nombre'=>'Nombre', 'apellido'=>'Apellido', 'correo'=>'usuario@gmail.com', 'usuario'=>'usuario', 'password'=>bcrypt('123456')]);
 ```
 
 ## Crear autenticación de Laravel
