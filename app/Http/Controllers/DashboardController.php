@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Usuario;
 
 class DashboardController extends Controller
 {
@@ -23,6 +25,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('template.administrator.dashboard');
+        return view('administrator.dashboard.index', ['member_since'=>Auth::user()->created_at->format('M, Y')]);
     }
 }
