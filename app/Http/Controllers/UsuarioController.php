@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Usuario;
 use Auth;
 use App\Http\Middleware\RolUsuarioMiddleware;
+use App\Http\Requests\StoreUsuarioRequest;
+
+use Illuminate\Support\Facades\Storage;
 
 class UsuarioController extends Controller
 {
@@ -13,7 +16,7 @@ class UsuarioController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(RolUsuarioMiddleware::class);
+        $this->middleware(RolUsuarioMiddleware::class)->except('show', 'edit', 'update');
     }
 
     /**
@@ -34,7 +37,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        
+        return view('administrator.user.create');
     }
 
     /**
@@ -43,9 +46,26 @@ class UsuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUsuarioRequest $request)
     {
-        
+        $user = new Usuario;
+
+        $user->nombre = $request->nombre;
+        $user->apellido = $request->apellido;
+        $user->correo = $request->correo;
+        $user->usuario = $request->usuario;
+        $user->password = bcrypt($request->password);
+        if ($request->file('foto_perfil'))
+        {
+            $path = Storage::disk('public')->put('images/administrator/avatars', $request->file('foto_perfil'));
+            $user->foto_perfil = asset($path);
+        }
+        else
+            $user->foto_perfil = asset('images/administrator/avatars/default-avatar-160.png');
+
+        $user->save();
+
+        return redirect()->route('usuario.index')->with('info', '¡Usuario creado exitosamente!');
     }
 
     /**
@@ -90,6 +110,6 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        
+
     }
 }

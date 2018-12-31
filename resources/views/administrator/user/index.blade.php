@@ -10,52 +10,6 @@
 
 @endsection
 
-@section('account')
-
-	<li class="dropdown user user-menu">
-		<!-- Menu Toggle Button -->
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		<!-- The user image in the navbar-->
-		<img src="{{ Path_Images::path_images_users() }}{{ Auth::user()->foto_perfil }}" class="user-image" alt="User Image">
-		<!-- hidden-xs hides the username on small devices so only the image appears. -->
-        <span class="hidden-xs">{{ Auth::user()->nombre }}</span>
-		</a>
-		<ul class="dropdown-menu">
-		<!-- The user image in the menu -->
-		<li class="user-header">
-			<img src="{{ Path_Images::path_images_users() }}{{ Auth::user()->foto_perfil }}" class="img-circle" alt="User Image">
-
-			<p>
-			{{ Auth::user()->nombre . ' ' . Auth::user()->apellido }}
-            <small>Miembro desde {{ Auth::user()->created_at->format('M, Y') }}</small>
-			</p>
-		</li>
-		<!-- Menu Footer-->
-		<li class="user-footer">
-			<div class="pull-left">
-				<a href="#" class="btn btn-default btn-flat">Profile</a>
-			</div>
-			<div class="pull-right">
-
-				<a href="{{ route('logout') }}"
-					class="btn btn-default btn-flat"
-					onclick="event.preventDefault();
-								document.getElementById('logout-form').submit();">
-					Cerrar Sesión
-				</a>
-
-				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-					{{ csrf_field() }}
-				</form>
-
-			</div>
-		</li>
-		</ul>
-	</li>
-
-@endsection
-
-
 @section('content_header')
 
 	<h1>
@@ -70,6 +24,14 @@
 @endsection
 
 @section('content')
+
+    
+    @if (session('info'))
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{ session('info') }}
+          </div>
+    @endif
 
     <div class="row">
         <div class="col-xs-12">
