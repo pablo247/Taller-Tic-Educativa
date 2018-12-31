@@ -46,7 +46,9 @@
         <li class="{{ (Route::current()->getName() == 'dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="{{ (Route::current()->getName() == '#') ? 'active' : '' }}"><a href="#"><i class="fa fa-file"></i> <span>Artículos</span></a></li>
         <li class="{{ (Route::current()->getName() == '#') ? 'active' : '' }}"><a href="#"><i class="fa fa-vcard"></i> <span>CV</span></a></li>
-        <li class="{{ (Route::current()->getName() == '#') ? 'active' : '' }}"><a href="#"><i class="fa fa-user"></i> <span>Usuarios</span></a></li>
+        @if (Auth::user()->rol == 'super usuario')
+          <li class="{{ (Route::current()->getName() == 'usuario.index') ? 'active' : '' }}"><a href="{{ route('usuario.index') }}"><i class="fa fa-user"></i> <span>Usuarios</span></a></li>
+        @endif
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -75,7 +77,7 @@
 
 <!-- REQUIRED JS SCRIPTS -->
 
-<script src="{{ mix('/js/app_admin.js') }}"></script>
+@include('layout.administrator.blocks.scripts')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
