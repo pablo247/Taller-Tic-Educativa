@@ -7,6 +7,7 @@ use App\Usuario;
 use Auth;
 use App\Http\Middleware\RolUsuarioMiddleware;
 use App\Http\Requests\StoreUsuarioRequest;
+use App\Http\Requests\UpdateUsuarioResquest;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -87,7 +88,11 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        
+        $user = Usuario::find($id);
+
+        if ($user) return view('administrator.user.edit', compact('user'));
+
+        return redirect()->route('usuario.index')->with('warning', '¡Usuario no encontrado!');
     }
 
     /**
@@ -97,9 +102,29 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUsuarioResquest $request, $id)
     {
+        $user = Usuario::find($id);
+
+        $user->nombre = $request->nombre;
+        $user->apellido = $request->apellido;
+        $user->correo = $request->correo;
+        $user->usuario = $request->usuario;
         
+        if ($request->get('password'))
+        {
+            $user->password = bcrypt($request->password);
+        }
+
+        if ($request->file('foto_perfil'))
+        {
+            $path = Storage::disk('public')->put('images/administrator/avatars', $request->file('foto_perfil'));
+            $user->foto_perfil = asset($path);
+        }
+
+        $user->save();
+        
+        return redirect()->route('usuario.index')->with('info', '¡Usuario editado exitosamente!');
     }
 
     /**
