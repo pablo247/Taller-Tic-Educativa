@@ -57,6 +57,18 @@ Route::prefix('administrator')->group(function () {
     Route::put('/curriculum/{curriculum_id}', 'CurriculumController@update')->name('administrator.curriculum.update');
     // Route::delete('/curriculum/{curriculum_id}', 'CurriculumController@destroy')->name('administrator.curriculum.destroy');
 
+
+    Route::resource('/redsocial', 'RedSocialController', 
+        ['names' => [
+            'index' => 'administrator.redsocial.index',
+            'create' => 'administrator.redsocial.create',
+            'store' => 'administrator.redsocial.store',
+            'edit' => 'administrator.redsocial.edit',
+            'update' => 'administrator.redsocial.update'
+        ]],
+        ['except' => [ 'show', 'destroy' ]]
+    );
+
 });
 
 Route::get('/curriculum/{user_id}', function ($id) {
