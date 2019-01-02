@@ -43,7 +43,7 @@ Route::prefix('administrator')->group(function () {
 
     Route::resource('/usuario', 'UsuarioController', 
         ['except' => [
-            'destroy'
+            'destroy', 'show'
         ]]
     );
 

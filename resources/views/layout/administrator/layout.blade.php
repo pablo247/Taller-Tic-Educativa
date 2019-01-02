@@ -11,7 +11,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{ route('dashboard') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>TIC</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -49,7 +49,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="{{ route('usuario.edit', Auth::user()->id) }}" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
         

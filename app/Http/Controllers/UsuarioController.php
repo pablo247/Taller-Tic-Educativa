@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Usuario;
 use Auth;
+
 use App\Http\Middleware\RolUsuarioMiddleware;
+use App\Http\Middleware\PerfilUsuarioMiddleware;
+
 use App\Http\Requests\StoreUsuarioRequest;
 use App\Http\Requests\UpdateUsuarioResquest;
 
@@ -17,7 +20,8 @@ class UsuarioController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(RolUsuarioMiddleware::class)->except('show', 'edit', 'update');
+        $this->middleware(RolUsuarioMiddleware::class)->except('edit', 'update');
+        $this->middleware(PerfilUsuarioMiddleware::class)->only('edit', 'update');
     }
 
     /**
