@@ -69,6 +69,14 @@
                             <img class="img-responsive img-thumbnail" src="{{ asset('images/site/cv/images_header/image_hero_default.jpg') }}" alt="Banner de encabeza de página" style="width:150px;">
 							<input type="file" id="banner" name="banner">
 						</div>
+
+						@foreach ($redessociales as $redsocial)
+                            <div class="form-group">
+                                <img style="margin-right:2rem;" class="img-responsive img-thumbnail" src="{{ $redsocial->icono }}" alt="Banner de encabeza de página" style="width:32px;">
+                                <label for="banner">URL de {{ $redsocial->titulo }}</label>
+                                <input type="text" class="form-control" id="icono" name="icono[{{ $redsocial->id }}]" placeholder="Ingrese la URL de la Red Social">
+                            </div>
+                        @endforeach
 					</div>
 					<!-- /.box-body -->
 

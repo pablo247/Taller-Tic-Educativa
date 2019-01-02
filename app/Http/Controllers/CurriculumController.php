@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Curriculum;
+use App\RedSocial;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -28,7 +29,9 @@ class CurriculumController extends Controller
      */
     public function create()
     {
-        return view('administrator.cv.create');
+        $redessociales = RedSocial::all();
+
+        return view('administrator.cv.create', compact('redessociales'));
     }
 
     /**
@@ -50,6 +53,17 @@ class CurriculumController extends Controller
             $input = array_merge($input, ['banner' => asset('images/site/cv/images_header/image_hero_default.jpg')]);
         
         $curriculum = Curriculum::create($input);
+        $curriculum = Curriculum::find(Auth::user()->id);
+
+        $url = [];
+
+        foreach ($request->icono as $key => $value)
+        {
+            if ($value) $url[$key] = ['url' => $value];
+        }
+
+        if (!empty($url))
+            $curriculum->redes_sociales()->sync($url);
 
         return redirect()->route('administrator.curriculum.edit', Auth::user()->id)->with('info', '¡Usuario editado exitosamente!');
     }
@@ -64,7 +78,16 @@ class CurriculumController extends Controller
     {
         $curriculum = Curriculum::find($id);
 
-        if ($curriculum) return view('administrator.cv.edit', compact('curriculum'));
+        $urls = [];
+
+        foreach ($curriculum->redes_sociales as $key => &$value)
+        {
+            $urls[$value->pivot->red_social_id] = $value->pivot->url;
+        }
+
+        $redessociales = RedSocial::all();
+
+        if ($curriculum) return view('administrator.cv.edit', compact('curriculum', 'redessociales', 'urls'));
 
         return view('administrator.pages.unauthorized');
     }
@@ -82,7 +105,19 @@ class CurriculumController extends Controller
 
         if ( ! $curriculum ) return view('administrator.cv.create');
 
+        $url = [];
+
+        foreach ($request->icono as $key => $value)
+        {
+            if ($value) $url[$key] = ['url' => $value];
+        }
+
+        if (!empty($url))
+            $curriculum->redes_sociales()->sync($url);
+
         $input = $request->all();
+
+        unset($input['icono']);
         
         if ($request->file('banner'))
         {

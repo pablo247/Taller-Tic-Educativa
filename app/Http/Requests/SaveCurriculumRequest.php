@@ -26,7 +26,8 @@ class SaveCurriculumRequest extends FormRequest
         $rules = [
             'titulo' => 'required|max:100',
             'acerca' => 'required',
-            'mensaje_contacto' => 'required|max:191'
+            'mensaje_contacto' => 'required|max:191',
+            'icono.*' => 'nullable|url'
         ];
 
         if ($this->get('banner'))
