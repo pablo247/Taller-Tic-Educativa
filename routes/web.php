@@ -47,4 +47,21 @@ Route::prefix('administrator')->group(function () {
         ]]
     );
 
+
+    // Route::resource('/curriculum', 'CurriculumController');
+    // Route::get('/curriculum', 'CurriculumController@index')->name('administrator.curriculum.index');
+    Route::get('/curriculum/create', 'CurriculumController@create')->name('administrator.curriculum.create');
+    Route::post('/curriculum', 'CurriculumController@store')->name('administrator.curriculum.store');
+    // Route::get('/curriculum/{curriculum_id}', 'CurriculumController@show')->name('administrator.curriculum.show');
+    Route::get('/curriculum/{curriculum_id}/edit', 'CurriculumController@edit')->name('administrator.curriculum.edit');
+    Route::put('/curriculum/{curriculum_id}', 'CurriculumController@update')->name('administrator.curriculum.update');
+    // Route::delete('/curriculum/{curriculum_id}', 'CurriculumController@destroy')->name('administrator.curriculum.destroy');
+
 });
+
+Route::get('/curriculum/{user_id}', function ($id) {
+    
+    $curriculum = App\Curriculum::find($id);
+    dd($curriculum->toArray());
+
+})->name('curriculum.template');

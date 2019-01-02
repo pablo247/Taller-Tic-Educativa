@@ -84,7 +84,16 @@
         <!-- Optionally, you can add icons to the links -->
         <li class="{{ (Route::current()->getName() == 'dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="{{ (Route::current()->getName() == '#') ? 'active' : '' }}"><a href="#"><i class="fa fa-file"></i> <span>Artículos</span></a></li>
-        <li class="{{ (Route::current()->getName() == '#') ? 'active' : '' }}"><a href="#"><i class="fa fa-vcard"></i> <span>CV</span></a></li>
+        <li class="treeview {{ (Route::current()->getName() == 'administrator.curriculum.create' || Route::current()->getName() == 'administrator.curriculum.edit') ? 'active' : '' }}">
+          <a href="#"><i class="fa fa-vcard"></i> <span>CV</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ (Route::current()->getName() == 'administrator.curriculum.create' || Route::current()->getName() == 'administrator.curriculum.edit') ? 'active' : '' }}"><a href="{{ route('administrator.curriculum.create') }}">Información Básica</a></li>
+          </ul>
+        </li>
         @if (Auth::user()->rol == 'super usuario')
           <li class="{{ (Route::current()->getName() == 'usuario.index') ? 'active' : '' }}"><a href="{{ route('usuario.index') }}"><i class="fa fa-user"></i> <span>Usuarios</span></a></li>
         @endif
