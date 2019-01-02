@@ -29,7 +29,6 @@ class StoreUsuarioRequest extends FormRequest
             'correo' => 'required|unique:usuario,correo|max:100|email',
             'usuario' => 'required|unique:usuario,usuario|max:100',
             'password' => 'required|max:191',
-            'foto_perfil' => 'nullable|image',
         ];
 
         if ($this->get('foto_perfil'))

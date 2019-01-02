@@ -14,7 +14,7 @@
 
 	<h1>
 		Usuarios
-		<small>Lista de Usuarios</small>
+		<small>Nuevo Usuario</small>
 	</h1>
 	<ol class="breadcrumb">
 		<li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i></a></li>
@@ -78,7 +78,7 @@
 					<!-- /.box-body -->
 
 					<div class="box-footer">
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary">Enviar</button>
 					</div>
 				</form>
 			</div>
