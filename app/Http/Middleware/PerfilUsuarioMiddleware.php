@@ -16,7 +16,7 @@ class PerfilUsuarioMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ( intval($request->route()->usuario) !== $request->user()->id )
+        if ( intval($request->route()->usuario) !== $request->user()->id && $request->user()->rol != 'super usuario' )
         {
             return new Response(view('administrator.pages.unauthorized'));
         }
