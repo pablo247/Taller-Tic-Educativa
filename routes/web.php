@@ -69,7 +69,12 @@ Route::prefix('administrator')->group(function () {
         ['except' => [ 'show', 'destroy' ]]
     );
 
+    Route::name('administrator.')->group(function () {
+        Route::resource('/conocimiento', 'ConocimientoController', ['except' => [ 'show' ]]);
+    });
+
 });
+
 
 Route::get('/curriculum/{user_id}', function ($id) {
     
