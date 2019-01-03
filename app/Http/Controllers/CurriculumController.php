@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Curriculum;
 use App\RedSocial;
+use App\Usuario;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -18,8 +19,8 @@ class CurriculumController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware(FormCurriculumMiddleware::class)->except(['edit', 'update']);
+        $this->middleware('auth')->except(['template']);
+        $this->middleware(FormCurriculumMiddleware::class)->except(['edit', 'update', 'template']);
         $this->middleware(AccessOnlyOwnCurriculumMiddleware::class)->only(['edit', 'update']);
     }
     /**
@@ -128,5 +129,58 @@ class CurriculumController extends Controller
         $curriculum = $curriculum->fill($input)->save();
 
         return back()->with('info', 'Información Guardada Correctamente.');
+    }
+
+    public function template($id)
+    {
+        $usuario = Usuario::find($id);
+
+        if ( ! $usuario) dd('Error 404, Página no encontrada.');
+
+        $curriculum = Curriculum::find($id);
+
+        $redessociales = [];
+        $conocimientos = [];
+        $portafolio = [];
+
+        foreach ($curriculum->redes_sociales as $key => $value)
+        {
+            $redessociales[] = [
+                'titulo' => $value->titulo,
+                'icono' => $value->icono,
+                'url' => $value->pivot->url
+            ];
+        }
+
+        foreach ($curriculum->conocimientos as $key => $value)
+        {
+            $conocimientos[] = [
+                'icono' => $value->icono,
+                'titulo' => $value->titulo,
+                'descripcion' => $value->descripcion
+            ];
+        }
+
+        foreach ($curriculum->portafolios as $key => $value)
+        {
+            $portafolio[] = [
+                'descripcion' => $value->descripcion,
+                'imagen' => $value->imagen,
+                'url' => $value->url
+            ];
+        }
+
+        $data = [
+            'banner' => $curriculum->banner,
+            'foto_perfil' => $usuario->foto_perfil,
+            'nombre' => $usuario->nombre . ' ' . $usuario->apellido,
+            'titulo' => $curriculum->titulo,
+            'acerca' => $curriculum->acerca,
+            'redessociales' => $redessociales,
+            'conocimientos' => $conocimientos,
+            'portafolio' => $portafolio
+        ];
+        
+        return view('site.cv.index', compact('data'));
     }
 }

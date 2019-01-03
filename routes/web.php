@@ -79,9 +79,4 @@ Route::prefix('administrator')->group(function () {
 });
 
 
-Route::get('/curriculum/{user_id}', function ($id) {
-    
-    $curriculum = App\Curriculum::find($id);
-    dd($curriculum->toArray());
-
-})->name('curriculum.template');
+Route::get('/curriculum/{user_id}', 'CurriculumController@template')->name('curriculum.template');
