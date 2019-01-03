@@ -29,7 +29,7 @@ class Curriculum extends Model
         return $this->hasMany('App\Conocimiento');
     }
 
-    public function potafolios()
+    public function portafolios()
     {
         return $this->hasMany('App\Portafolio');
     }
