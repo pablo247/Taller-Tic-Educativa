@@ -54,22 +54,49 @@
             </div>
             <hr>
             <div class="contact uk-section uk-text-center">
-                <h2>Contacto</h2>
+                <h2 id="contacto">Contacto</h2>
+
+                @if (session('info'))
+                    <div class="uk-alert-primary" uk-alert>
+                        <a class="uk-alert-close" uk-close></a>
+                        <p>{{ session('info') }}</p>
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="uk-alert-danger" uk-alert>
+                        <a class="uk-alert-close" uk-close></a>
+                        <p>{{ session('error') }}</p>
+                    </div>
+                @endif
+
+                @if (count($errors))
+                <div class="uk-alert-danger" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
     
-                <form>
+                <form method="POST" action="@yield('redirectContact')">
                     <div class="uk-margin">
-                        <input class="uk-input uk-form-width-large" type="text" placeholder="Nombre">
+                        <input name="name" class="uk-input uk-form-width-large" type="text" placeholder="Nombre">
                     </div>
             
                     <div class="uk-margin">
-                        <input class="uk-input uk-form-width-large" type="text" placeholder="Correo Electrónico">
+                        <input name="email" class="uk-input uk-form-width-large" type="text" placeholder="Correo Electrónico">
                     </div>
             
                     <div class="uk-margin">
-                        <textarea class="uk-textarea uk-form-width-large" rows="5" placeholder="Mensaje"></textarea>
+                        <textarea name="message" class="uk-textarea uk-form-width-large" rows="5" placeholder="Mensaje"></textarea>
                     </div>
     
-                    <button class="uk-button uk-button-primary">Enviar</button>
+                    <button type="submit" class="uk-button uk-button-primary">Enviar</button>
+
+                    {{ csrf_field() }}
                 </form>
             </div>
         </div>

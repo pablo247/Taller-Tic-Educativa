@@ -52,3 +52,5 @@
     </div>
     @endforeach
 @endsection
+
+@section('redirectContact', route('curriculum.sendEmail', $data['id']))

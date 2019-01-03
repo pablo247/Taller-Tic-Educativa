@@ -12,15 +12,19 @@ use App\Http\Middleware\FormCurriculumMiddleware;
 use App\Http\Middleware\AccessOnlyOwnCurriculumMiddleware;
 
 use App\Http\Requests\SaveCurriculumRequest;
+use Validator;
 
 use Illuminate\Support\Facades\Storage;
+
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 
 class CurriculumController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['template']);
-        $this->middleware(FormCurriculumMiddleware::class)->except(['edit', 'update', 'template']);
+        $this->middleware('auth')->except(['template', 'contact']);
+        $this->middleware(FormCurriculumMiddleware::class)->except(['edit', 'update', 'template', 'contact']);
         $this->middleware(AccessOnlyOwnCurriculumMiddleware::class)->only(['edit', 'update']);
     }
     /**
@@ -115,7 +119,7 @@ class CurriculumController extends Controller
 
         if (!empty($url))
             $curriculum->redes_sociales()->sync($url);
-
+            
         $input = $request->all();
 
         unset($input['icono']);
@@ -171,6 +175,7 @@ class CurriculumController extends Controller
         }
 
         $data = [
+            'id' => $id,
             'banner' => $curriculum->banner,
             'foto_perfil' => $usuario->foto_perfil,
             'nombre' => $usuario->nombre . ' ' . $usuario->apellido,
@@ -182,5 +187,31 @@ class CurriculumController extends Controller
         ];
         
         return view('site.cv.index', compact('data'));
+    }
+
+    public function contact(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+
+        if ($validator->fails())
+        {
+            return redirect()->route('curriculum.template', ['user_id'=>$id, 'section'=>'#contacto'])->withErrors($validator)->withInput();
+        }
+
+        $usuario = Usuario::find($id);
+
+        if ($usuario)
+        {
+            Mail::to($usuario->correo)->send(new ContactMail($request->all()));
+            return redirect()->route('curriculum.template', ['user_id'=>$id, 'section'=>'#contacto'])->with('info', $usuario->curriculum->mensaje_contacto);
+        }
+        else
+        {
+            return redirect()->route('curriculum.template', ['user_id'=>$id, 'section'=>'#contacto'])->with('error', 'Error al enviar el correo, intentar nuevamente.');
+        }
     }
 }

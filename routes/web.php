@@ -79,4 +79,5 @@ Route::prefix('administrator')->group(function () {
 });
 
 
-Route::get('/curriculum/{user_id}', 'CurriculumController@template')->name('curriculum.template');
+Route::get('/curriculum/{user_id}/{section?}', 'CurriculumController@template')->name('curriculum.template');
+Route::post('/curriculum/send/{user_id}', 'CurriculumController@contact')->name('curriculum.sendEmail');
