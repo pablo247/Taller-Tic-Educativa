@@ -83,7 +83,7 @@
         <li class="header">Ménu</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="{{ (Route::current()->getName() == 'dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li class="{{ (Route::current()->getName() == '#') ? 'active' : '' }}"><a href="#"><i class="fa fa-file"></i> <span>Artículos</span></a></li>
+        <li class="{{ (Route::current()->getName() == 'administrator.articulo.index') ? 'active' : '' }}"><a href="{{ route('administrator.articulo.index') }}"><i class="fa fa-file"></i> <span>Artículos</span></a></li>
         <li class="treeview {{ (Route::current()->getName() == 'administrator.curriculum.create' || Route::current()->getName() == 'administrator.curriculum.edit' || Route::current()->getName() == 'administrator.redsocial.index' || Route::current()->getName() == 'administrator.conocimiento.index' || Route::current()->getName() == 'administrator.portafolio.index') ? 'active' : '' }}">
           <a href="#"><i class="fa fa-vcard"></i> <span>CV</span>
             <span class="pull-right-container">

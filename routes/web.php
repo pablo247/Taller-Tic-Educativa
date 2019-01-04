@@ -75,6 +75,8 @@ Route::prefix('administrator')->group(function () {
 
     Route::name('administrator.')->group(function () {
         Route::resource('/portafolio', 'PortafolioController', ['except' => [ 'show' ]]);
+
+        Route::resource('/articulo', 'ArticuloController', ['except' => [ 'show' ]]);
     });
 });
 
