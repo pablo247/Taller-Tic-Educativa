@@ -37,6 +37,13 @@
 	</div>
 	@endif
 
+	@if (session('warning'))
+        <div class="alert alert-warning alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			{{ session('warning') }}
+		</div>
+    @endif
+
 	<div class="row">
 		<!-- left column -->
 		<div class="col-md-8 col-md-offset-2">

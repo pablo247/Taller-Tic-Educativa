@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Articulo;
 
 use Auth;
+use App\Http\Middleware\HaveCurriculumMiddleware;
 
 use App\Http\Requests\StoreArticuloRequest;
 
@@ -19,6 +20,7 @@ class ArticuloController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(HaveCurriculumMiddleware::class);
     }
 
     /**
