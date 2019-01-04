@@ -62,9 +62,12 @@ class CurriculumController extends Controller
 
         $url = [];
 
-        foreach ($request->icono as $key => $value)
+        if ($request->icono)
         {
-            if ($value) $url[$key] = ['url' => $value];
+            foreach ($request->icono as $key => $value)
+            {
+                if ($value) $url[$key] = ['url' => $value];
+            }
         }
 
         if (!empty($url))
@@ -112,9 +115,12 @@ class CurriculumController extends Controller
 
         $url = [];
 
-        foreach ($request->icono as $key => $value)
+        if ($request->icono)
         {
-            if ($value) $url[$key] = ['url' => $value];
+            foreach ($request->icono as $key => $value)
+            {
+                if ($value) $url[$key] = ['url' => $value];
+            }
         }
 
         if (!empty($url))
