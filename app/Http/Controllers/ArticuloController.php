@@ -34,7 +34,8 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        $articulos = Articulo::orderBy('id', 'DESC')->paginate(5);
+        if (Auth::user()->rol == 'super usuario') $articulos = Articulo::orderBy('id', 'DESC')->paginate(5);
+        else $articulos = Articulo::where('usuario_id', Auth::user()->id)->orderBy('id', 'DESC')->paginate(5);
 
         return view('administrator.articulo.index', compact('articulos'));
     }
