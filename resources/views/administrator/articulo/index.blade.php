@@ -67,7 +67,7 @@
                                     <td>{{$articulo->id}}</td>
 									<td>{{$articulo->titulo}}</td>
 									<td>{{$articulo->introduccion}}</td>
-									<td>{{$articulo->publicado}}</td>
+									<td>{{$articulo->publicado ? 'Si' : 'No'}}</td>
 									<td>{{$articulo->fecha_publicacion}}</td>
                                     <td>
                                         <a href="{{ route('administrator.articulo.edit', $articulo->id) }}" class="btn btn-block btn-warning btn-sm">Editar</a>

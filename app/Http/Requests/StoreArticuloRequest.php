@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Auth;
 
 class StoreArticuloRequest extends FormRequest
 {
@@ -23,14 +24,17 @@ class StoreArticuloRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules =  [
             'titulo' => 'required|max:191',
-            'alias' => 'required|max:191',
+            'alias' => 'required|max:191|unique:articulo,alias',
             'imagen' => 'required|mimes:jpg,jpeg,png',
             'introduccion' => 'required|max:700',
             'contenido' => 'required',
-            'publicado' => 'required|boolean',
             'fecha_publicacion' => 'required|date_format:"d-m-Y"',
         ];
+
+        if (Auth::user()->rol == 'super usuario') $rules['publicado'] = 'required|boolean';
+
+        return $rules;
     }
 }

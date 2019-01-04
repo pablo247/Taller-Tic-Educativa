@@ -9,6 +9,7 @@ use App\Articulo;
 use Auth;
 use App\Http\Middleware\HaveCurriculumMiddleware;
 
+use Validator;
 use App\Http\Requests\StoreArticuloRequest;
 
 use Illuminate\Support\Facades\Storage;
@@ -42,7 +43,14 @@ class ArticuloController extends Controller
      */
     public function create()
     {
-        return view('administrator.articulo.create');
+        $fechas = Articulo::orderBy('id', 'DESC')->get(['fecha_publicacion'])->map(function ($fecha) {
+            $fecha->fecha_publicacion = new Carbon($fecha->fecha_publicacion);
+            return $fecha->fecha_publicacion->format('d-m-Y');
+        });
+
+        $fechas = $fechas->toArray();
+
+        return view('administrator.articulo.create', compact('fechas'));
     }
 
     /**
@@ -56,6 +64,17 @@ class ArticuloController extends Controller
         $input = $request->all();
 
         $input['fecha_publicacion'] = new Carbon($input['fecha_publicacion']);
+
+        $validator = Validator::make($input, [
+            'fecha_publicacion' => 'unique:articulo,fecha_publicacion',
+        ]);
+
+        if ($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        if (Auth::user()->rol != 'super usuario') $input['publicado'] = 0;
 
         if ($request->file('imagen'))
         {

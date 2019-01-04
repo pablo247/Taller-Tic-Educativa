@@ -19,6 +19,7 @@
         "imagemin-webpack-plugin": "^2.3.0",
         "jquery": "^3.2",
         "laravel-mix": "^1.0",
+        "slug": "^0.9.3",
         "uikit": "^3.0.0-rc.25"
     },
     "dependencies": {

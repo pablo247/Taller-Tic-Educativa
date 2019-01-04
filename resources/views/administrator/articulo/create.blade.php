@@ -8,21 +8,32 @@
 
 @section('scripts')
 
-<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
-
 <script>
 	$(function () {
 		CKEDITOR.replace('contenido');
 	});
-	
+
+	var fechas = @json($fechas);
+
 	//Date picker
     $('#datepicker').datepicker({
 		autoclose: true,
 		format: 'dd-mm-yyyy',
-    	datesDisabled: [
-			'1-4-2019'
-		]
+    	datesDisabled: fechas
 	});
+
+	$(document).ready(function () {
+
+		$("#titulo").keyup(function (e){
+			$("#alias").val( slug( $(e.currentTarget).val() ).toLowerCase() );
+		});
+
+		$("#titulo, #alias").focusout(function (e){
+			$("#alias").val( slug( $(e.currentTarget).val() ).toLowerCase() );
+		});
+
+	});
+
 </script>
 
 @endsection
@@ -75,6 +86,7 @@
 							<label for="alias">Alias del Artículo</label>
 							<input type="text" class="form-control" id="alias" name="alias" placeholder="Ingrese la url del artículo">
 						</div>
+						@if (Auth::user()->rol == 'super usuario')
 						<div class="form-group">
 							<label for="alias" style="margin-right:3rem;">Publicado</label>
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -86,6 +98,7 @@
 								</label>
 							</div>
 						</div>
+						@endif
 						<div class="form-group">
 							<label for="fecha_publicacion">Fecha de Publicación:</label>
 							<div class="input-group date">
