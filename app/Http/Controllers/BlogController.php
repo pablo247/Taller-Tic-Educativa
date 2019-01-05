@@ -20,10 +20,11 @@ class BlogController extends Controller
         $query_date_Y_m = $query_date->format('Y-m');
         $query_date = $query_date->format('Y-m-d');
 
-        # Obtener todas las fechas y filtrar por Mes-Año
+        # Obtener todas las fechas hasta hoy y filtrar por Mes-Año
         $dates = DB::table('articulo')
                     ->selectRaw("DATE_FORMAT(fecha_publicacion, '%Y-%m') as date")
                     ->where('publicado', 1)
+                    ->whereRaw('fecha_publicacion <= NOW()')
                     ->groupBy('date')
                     ->orderBy('date', 'asc')
                     ->get();
@@ -32,15 +33,16 @@ class BlogController extends Controller
             return $query_date_Y_m === $value->date;
         });
 
-        if ( empty($have_date->toArray()) ) return redirect()->route('blog');
+        if ( empty($have_date->toArray()) ) return view('site.blog.index', ['empty' => true]);
 
         $dates = $dates->toArray();
         
-        # Obtener publicaciones solo de un mes
+        # Obtener publicaciones solo del mes especificado y hasta el día de hoy
         $publications = DB::table('articulo')
                             ->selectRaw("id, titulo, alias, imagen, introduccion, DATE_FORMAT(fecha_publicacion, '%d') as day, DATE_FORMAT(fecha_publicacion, '%M %d, %Y') as date")
                             ->where('publicado', 1)
                             ->whereRaw("DATE_FORMAT(fecha_publicacion, '%Y-%m') = DATE_FORMAT('$query_date', '%Y-%m')")
+                            ->whereRaw('fecha_publicacion <= NOW()')
                             ->orderBy('day', 'desc')
                             ->get()->toArray();
 

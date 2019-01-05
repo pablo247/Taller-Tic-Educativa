@@ -12,6 +12,7 @@
 
 @section('content')
 	<h1 class="uk-text-center">Blog</h1>
+	@if (! isset($empty))
 	<section id="calendar" class="calendar uk-margin-auto">
 		<button id="calendar__button-preview" class="uk-button uk-button-secondary uk-button-small uk-border-rounded calendar__button">
 			<span class="calendar__button--icon" uk-icon="icon: chevron-left; ratio: 1.5"></span>
@@ -89,4 +90,7 @@
 			</ul>
 		</section>
 	</div>
+	@else
+		<p>Aún no hay publicaciones</p>
+	@endif
 @endsection
