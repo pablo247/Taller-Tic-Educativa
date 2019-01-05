@@ -114,6 +114,18 @@ php artisan tinker
 User::create(['nombre'=>'Nombre', 'apellido'=>'Apellido', 'correo'=>'usuario@gmail.com', 'usuario'=>'usuario', 'password'=>bcrypt('123456')]);
 ```
 
+Instalación de la librería doctrine/dbal para realizar cambios en las migraciones.
+
+Agregar al archivo composer.json e instalar la librería
+```sh
+composer require doctrine/dbal
+```
+
+Instalar la librería
+```sh
+composer install
+```
+
 ## Crear autenticación de Laravel
 
 Con el siguiente comando se generan los rutas, modelos, controladores y vistas para la migración que viene por defecto con laravel
