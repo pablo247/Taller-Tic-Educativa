@@ -120,3 +120,19 @@ Con el siguiente comando se generan los rutas, modelos, controladores y vistas p
 ```sh
 php artisan make:auth
 ```
+
+## Configuración de Email en el archivo .env
+
+Se debe configurar las siguientes variables con respecto al proveedor del servicio
+
+En este proyecto se utilizara el servicio que provee google
+
+```
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=usuario@gmail.com
+MAIL_PASSWORD=contraseña
+MAIL_ENCRYPTION=tls
+MAIL_FROM_NAME='Tic Educativa'
+```

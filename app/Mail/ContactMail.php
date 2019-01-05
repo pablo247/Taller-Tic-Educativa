@@ -30,6 +30,6 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('site.email.index');
+        return $this->subject('Contacto | Tic Educativa')->markdown('site.email.index');
     }
 }
