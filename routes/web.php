@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 # Rutas del Layout de la Aplicaión (Páginas Estaticas)
 Route::prefix('template')->group(function () {
@@ -83,3 +83,5 @@ Route::prefix('administrator')->group(function () {
 
 Route::get('/curriculum/{user_id}/{section?}', 'CurriculumController@template')->name('curriculum.template');
 Route::post('/curriculum/send/{user_id}', 'CurriculumController@contact')->name('curriculum.sendEmail');
+
+Route::get('/{month?}/{year?}', 'BlogController@index')->where(['month' => '\d{2}', 'year' => '\d{4}'])->name('blog');
