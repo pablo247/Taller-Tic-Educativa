@@ -1,6 +1,6 @@
 @extends('layout.site.blog.layout')
 
-@section('title', 'Artículo')
+@section('title', $article->titulo)
 
 @section('styles')
 	{{-- Ingrese los archivos CSS --}}
