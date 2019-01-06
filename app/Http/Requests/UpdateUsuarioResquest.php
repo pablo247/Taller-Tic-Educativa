@@ -27,6 +27,7 @@ class UpdateUsuarioResquest extends FormRequest
             'nombre' => 'required|max:191',
             'apellido' => 'required|max:191',
             'correo' => 'required|unique:usuario,correo,'.$this->route()->usuario.'|max:100|email',
+            'rol' => 'required|in:editor,super usuario',
             'usuario' => 'required|unique:usuario,usuario,'.$this->route()->usuario.'|max:100',
         ];
 

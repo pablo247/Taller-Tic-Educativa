@@ -58,6 +58,7 @@ class UsuarioController extends Controller
         $user->nombre = $request->nombre;
         $user->apellido = $request->apellido;
         $user->correo = $request->correo;
+        $user->rol = $request->rol;
         $user->usuario = $request->usuario;
         $user->password = bcrypt($request->password);
         if ($request->file('foto_perfil'))
@@ -113,6 +114,7 @@ class UsuarioController extends Controller
         $user->nombre = $request->nombre;
         $user->apellido = $request->apellido;
         $user->correo = $request->correo;
+        $user->rol = $request->rol;
         $user->usuario = $request->usuario;
         
         if ($request->get('password'))

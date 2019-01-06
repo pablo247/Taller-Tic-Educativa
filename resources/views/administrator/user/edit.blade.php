@@ -62,6 +62,14 @@
 							<input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresu su correo" value="{{ $user->correo }}">
 						</div>
 						<div class="form-group">
+							<label for="rol">Rol</label>
+							<select  name="rol" id="rol" class="form-control">
+								<option>Seleccione un rol</option>
+								<option value="editor" {{ $user->rol === 'editor' ? 'selected' : '' }}>Editor</option>
+								<option value="super usuario" {{ $user->rol === 'super usuario' ? 'selected' : '' }}>Super Usuario</option>
+							</select> 
+						</div>
+						<div class="form-group">
 							<label for="usuario">Usuario</label>
 							<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese su usuario" value="{{ $user->usuario }}">
 						</div>
