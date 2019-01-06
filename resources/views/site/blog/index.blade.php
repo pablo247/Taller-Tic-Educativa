@@ -60,7 +60,7 @@
 							</div>
 							<div class="uk-width-2-3@s">
 								<div class="uk-card-body">
-									<h3 class="uk-card-title"><a href="#">{{ $publication->titulo }}</a></h3>
+									<h3 class="uk-card-title"><a href="{{ route('articulo.show', $publication->alias) }}">{{ $publication->titulo }}</a></h3>
 									<p class="uk-article-meta uk-text-left">{{ $publication->date }}</p>
 									<p class="uk-text-left">{{ $publication->introduccion }}</p>
 								</div>
@@ -77,7 +77,7 @@
 							</div>
 							<div class="uk-width-2-3@s">
 								<div class="uk-card-body">
-									<h3 class="uk-card-title"><a href="#">{{ $publication->titulo }}</a></h3>
+									<h3 class="uk-card-title"><a href="{{ route('articulo.show', $publication->alias) }}">{{ $publication->titulo }}</a></h3>
 									<p class="uk-article-meta uk-text-left">{{ $publication->date }}</p>
 									<p class="uk-text-left">{{ $publication->introduccion }}</p>
 								</div>

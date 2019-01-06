@@ -85,3 +85,5 @@ Route::get('/curriculum/{user_id}/{section?}', 'CurriculumController@template')-
 Route::post('/curriculum/send/{user_id}', 'CurriculumController@contact')->name('curriculum.sendEmail');
 
 Route::get('/{month?}/{year?}', 'BlogController@index')->where(['month' => '\d{2}', 'year' => '\d{4}'])->name('blog');
+
+Route::get('/articulo/{nombre_articulo}', 'BlogController@show')->name('articulo.show');

@@ -49,4 +49,10 @@ class BlogController extends Controller
         return view('site.blog.index', compact('date_format', 'dates', 'publications'));
     }
 
+    public function show($nombre_publicacion)
+    {
+        $article = Articulo::where('alias', $nombre_publicacion)->firstOrFail(['id', 'titulo', 'imagen', 'contenido', 'fecha_publicacion', 'usuario_id']);
+        return view('site.article.index', compact('article'));
+    }
+
 }
