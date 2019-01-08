@@ -64,7 +64,7 @@
                             @forelse ($portafolio as $evidencia)
                                 <tr>
                                     <td>{{$evidencia->id}}</td>
-                                    <td><img src="{{$evidencia->imagen}}" alt="icono" style="width:50px"></td>
+                                    <td><img src="{{asset($evidencia->imagen)}}" alt="icono" style="width:50px"></td>
 									<td>{{$evidencia->url}}</td>
                                     <td>
                                         <a href="{{ route('administrator.portafolio.edit', $evidencia->id) }}" class="btn btn-block btn-warning btn-sm">Editar</a>

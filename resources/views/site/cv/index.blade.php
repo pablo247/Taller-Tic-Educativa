@@ -2,14 +2,14 @@
 
 @section('title', 'Curriculum Vitae')
 
-@section('image_header', $data['banner'])
+@section('image_header', asset($data['banner']))
 
-@section('image_profile', $data['foto_perfil'])
+@section('image_profile', asset($data['foto_perfil']))
 
 @section('social_networks')
     @foreach ($data['redessociales'] as $redsocial)
     <a href="{{ $redsocial['url'] }}" class="uk-icon-button uk-margin-small-right uk-margin-small-bottom">
-		<img src="{{ $redsocial['icono'] }}" alt="{{ $redsocial['titulo'] }}">
+		<img src="{{ asset($redsocial['icono']) }}" alt="{{ $redsocial['titulo'] }}">
 	</a>
     @endforeach
 @endsection
@@ -23,7 +23,7 @@
     @foreach ($data['conocimientos'] as $key => $conocimiento)
 	<div>
 		<div class="uk-card uk-card-body">
-			<img class="skills__image uk-width-small" src="{{ $conocimiento['icono'] }}" alt="{{ $conocimiento['titulo'] }}">
+			<img class="skills__image uk-width-small" src="{{ asset($conocimiento['icono']) }}" alt="{{ $conocimiento['titulo'] }}">
 			<p>{{ $conocimiento['titulo'] }}</p>
             <button class="uk-button uk-button-primary" uk-toggle="target: #modal{{ $key }}" type="button">Leer más</button>
 		</div>
@@ -43,7 +43,7 @@
     <div>
 		<div class="uk-inline-clip uk-transition-toggle" tabindex="0">
 			<a href="{{ $trabajo['url'] }}">
-                <img class="uk-width-medium" src="{{ $trabajo['imagen'] }}" alt="Desarolo Web">
+                <img class="uk-width-medium" src="{{ asset($trabajo['imagen']) }}" alt="Desarolo Web">
 				<div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
 					<p class="">{{ $trabajo['descripcion'] }}</p>
 				</div>

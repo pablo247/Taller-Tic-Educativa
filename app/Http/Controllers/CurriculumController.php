@@ -52,10 +52,10 @@ class CurriculumController extends Controller
         if ($request->file('banner'))
         {
             $path = Storage::disk('public')->put('images/site/cv/images_header', $request->file('banner'));
-            $input = array_merge($input, ['banner' => asset($path)]);
+            $input = array_merge($input, ['banner' => $path]);
         }
         else
-            $input = array_merge($input, ['banner' => asset('images/site/cv/images_header/image_hero_default.jpg')]);
+            $input = array_merge($input, ['banner' => 'images/site/cv/images_header/image_hero_default.jpg']);
         
         $curriculum = Curriculum::create($input);
         $curriculum = Curriculum::find(Auth::user()->id);
@@ -133,7 +133,7 @@ class CurriculumController extends Controller
         if ($request->file('banner'))
         {
             $path = Storage::disk('public')->put('images/site/cv/images_header', $request->file('banner'));
-            $input = array_merge($input, ['banner' => asset($path)]);
+            $input = array_merge($input, ['banner' => $path]);
         }
         
         $curriculum = $curriculum->fill($input)->save();
@@ -145,7 +145,7 @@ class CurriculumController extends Controller
     {
         $usuario = Usuario::find($id);
 
-        if ( ! $usuario) dd('Error 404, Página no encontrada.');
+        if ( ! $usuario) abort(404);
 
         $curriculum = Curriculum::find($id);
 

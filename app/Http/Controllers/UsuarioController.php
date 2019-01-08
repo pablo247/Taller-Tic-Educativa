@@ -64,10 +64,11 @@ class UsuarioController extends Controller
         if ($request->file('foto_perfil'))
         {
             $path = Storage::disk('public')->put('images/administrator/avatars', $request->file('foto_perfil'));
-            $user->foto_perfil = asset($path);
+
+            $user->foto_perfil = $path;
         }
         else
-            $user->foto_perfil = asset('images/administrator/avatars/default-avatar-160.png');
+            $user->foto_perfil = 'images/administrator/avatars/default-avatar-160.png';
 
         $user->save();
 
@@ -125,7 +126,7 @@ class UsuarioController extends Controller
         if ($request->file('foto_perfil'))
         {
             $path = Storage::disk('public')->put('images/administrator/avatars', $request->file('foto_perfil'));
-            $user->foto_perfil = asset($path);
+            $user->foto_perfil = $path;
         }
 
         $user->save();

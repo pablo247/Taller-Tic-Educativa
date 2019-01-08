@@ -55,7 +55,6 @@ class ConocimientoController extends Controller
         if ($request->file('icono'))
         {
             $path = Storage::disk('public')->put('images/site/cv/images_skills', $request->file('icono'));
-            $path = asset($path);
         }
 
         Conocimiento::create(array_merge($request->all(), ['icono' => $path, 'curriculum_id' => Auth::user()->id]));
@@ -107,7 +106,7 @@ class ConocimientoController extends Controller
         if ($request->file('icono'))
         {
             $path = Storage::disk('public')->put('images/site/cv/images_skills', $request->file('icono'));
-            $input['icono'] = asset($path);
+            $input['icono'] = $path;
         }
 
         $conocimiento->fill($input)->save();

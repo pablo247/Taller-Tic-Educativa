@@ -55,7 +55,6 @@ class PortafolioController extends Controller
         if ($request->file('imagen'))
         {
             $path = Storage::disk('public')->put('images/site/cv/images_portfolio', $request->file('imagen'));
-            $path = asset($path);
         }
 
         Portafolio::create(array_merge($request->all(), ['imagen' => $path, 'curriculum_id' => Auth::user()->id]));
@@ -107,7 +106,7 @@ class PortafolioController extends Controller
         if ($request->file('imagen'))
         {
             $path = Storage::disk('public')->put('images/site/cv/images_portfolio', $request->file('imagen'));
-            $input['imagen'] = asset($path);
+            $input['imagen'] = $path;
         }
 
         $portafolio->fill($input)->save();

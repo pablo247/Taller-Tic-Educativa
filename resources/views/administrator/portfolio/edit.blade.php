@@ -62,7 +62,7 @@
 						</div>
 						<div class="form-group">
 							<label for="imagen" style="margin-right:3rem;">Vista previa</label>
-							<img src="{{ $portafolio->imagen }}" alt="icono" style="width:50px">
+							<img src="{{ asset($portafolio->imagen) }}" alt="icono" style="width:50px">
 							<input type="file" id="imagen" name="imagen">
 						</div>
 					</div>

@@ -65,7 +65,7 @@
                                 <tr>
                                     <td>{{$conocimiento->id}}</td>
 									<td>{{$conocimiento->titulo}}</td>
-                                    <td><img src="{{$conocimiento->icono}}" alt="icono" style="width:50px"></td>
+                                    <td><img src="{{asset($conocimiento->icono)}}" alt="icono" style="width:50px"></td>
                                     <td>
                                         <a href="{{ route('administrator.conocimiento.edit', $conocimiento->id) }}" class="btn btn-block btn-warning btn-sm">Editar</a>
 									</td>

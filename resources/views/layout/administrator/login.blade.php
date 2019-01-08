@@ -6,7 +6,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-      <img class="" src="/images/logo_TICeducativa_blanco.png" alt="Logotipo Tic Educativa" style="width:20rem;">
+      <img class="" src="{{ asset('images/logo_TICeducativa_normal.png') }}" alt="Logotipo Tic Educativa" style="width:20rem;">
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

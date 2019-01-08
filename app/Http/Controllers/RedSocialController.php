@@ -53,7 +53,6 @@ class RedSocialController extends Controller
         if ($request->file('icono'))
         {
             $path = Storage::disk('public')->put('images/site/cv/images_social-networks', $request->file('icono'));
-            $path = asset($path);
         }
 
         $redsocial = RedSocial::create(array_merge($request->all(), ['icono' => $path]));
@@ -105,7 +104,7 @@ class RedSocialController extends Controller
         if ($request->file('icono'))
         {
             $path = Storage::disk('public')->put('images/site/cv/images_social-networks', $request->file('icono'));
-            $input['icono'] = asset($path);
+            $input['icono'] = $path;
         }
 
         $redsocial->fill($input)->save();

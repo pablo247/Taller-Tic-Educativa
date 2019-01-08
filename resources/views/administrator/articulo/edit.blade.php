@@ -123,7 +123,7 @@
 						</div>
 						<div class="form-group">
 							<label for="imagen" style="margin-right:5rem;">Imagen de Publicación</label>
-							<img class="img-responsive img-thumbnail" src="{{ $articulo->imagen }}" alt="Banner de artículo" style="width:150px;">
+							<img class="img-responsive img-thumbnail" src="{{ asset($articulo->imagen) }}" alt="Banner de artículo" style="width:150px;">
 							<input type="file" id="imagen" name="imagen">
 						</div>
 					</div>

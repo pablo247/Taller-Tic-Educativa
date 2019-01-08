@@ -14,7 +14,7 @@
 	<article class="uk-article">
 
 		<div class="uk-card-media-left uk-cover-container">
-			<img src="/images/image_article.jpg" alt="" uk-cover>
+			<img src="{{asset('images/site/images_articles/image_article.jpg')}}" alt="" uk-cover>
 			<canvas width="200" height="300"></canvas>
 		</div>
 

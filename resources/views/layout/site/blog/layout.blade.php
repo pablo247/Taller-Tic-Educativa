@@ -7,7 +7,7 @@
 
     <header class="uk-panel uk-padding uk-padding-small header--background uk-light">
         <div class="uk-container">
-            <a class="uk-logo" href="{{route('blog')}}"><img class="uk-width-2-5 uk-width-1-5@s uk-width-1-6@m" src="/images/logo_TICeducativa_blanco.png" alt="Logotipo Tic Educativa"></a>
+            <a class="uk-logo" href="{{route('blog')}}"><img class="uk-width-2-5 uk-width-1-5@s uk-width-1-6@m" src="{{asset('/images/logo_TICeducativa_blanco.png')}}" alt="Logotipo Tic Educativa"></a>
         </div>
     </header>
     <main class="uk-panel uk-padding" uk-height-viewport="expand: true" >

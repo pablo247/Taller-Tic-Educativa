@@ -83,7 +83,6 @@ class ArticuloController extends Controller
         if ($request->file('imagen'))
         {
             $path = Storage::disk('public')->put('images/site/images_articles', $request->file('imagen'));
-            $path = asset($path);
         }
 
         Articulo::create(array_merge($input, ['imagen' => $path, 'usuario_id' => Auth::user()->id]));
@@ -165,7 +164,7 @@ class ArticuloController extends Controller
         if ($request->file('imagen'))
         {
             $path = Storage::disk('public')->put('images/site/images_articles', $request->file('imagen'));
-            $input = asset($path);
+            $input = $path;
         }
 
         $articulo->fill(array_merge($input, ['usuario_id' => Auth::user()->id]))->save();

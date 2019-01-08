@@ -74,7 +74,7 @@
                         <div class="form-group">
                             <p><small>Puedes descargar banners de buena calidad y gratis <a href="https://unsplash.com/search/photos/banner" target="_blank">aquí</a></small></p>
                             <label for="banner" style="margin-right:5rem;">Banner de Encabezado de Página</label>
-                            <img class="img-responsive img-thumbnail" src="{{ $curriculum->banner }}" alt="Banner de encabeza de página" style="width:150px;">
+                            <img class="img-responsive img-thumbnail" src="{{ asset($curriculum->banner) }}" alt="Banner de encabeza de página" style="width:150px;">
                             <input type="file" id="banner" name="banner">
                         </div>
 

@@ -79,7 +79,7 @@
 						</div>
 						<div class="form-group">
                             <label for="foto_perfil" style="margin-right:5rem;">Foto de Perfil</label>
-                            <img class="img-responsive img-circle img-thumbnail" src="{{ $user->foto_perfil }}" alt="User profile picture" style="width:100px; height:100px;">
+							<img class="img-responsive img-circle img-thumbnail" src="{{ asset($user->foto_perfil) }}" alt="User profile picture" style="width:100px; height:100px;">
 							<input type="file" id="foto_perfil" name="foto_perfil">
                         </div>
 					</div>

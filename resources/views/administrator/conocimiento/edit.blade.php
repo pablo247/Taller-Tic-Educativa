@@ -62,7 +62,7 @@
 						</div>
 						<div class="form-group">
 							<label for="icono">Icono</label><small style="padding-left:3rem;">Los iconos los puedes descargar de <a href="https://www.flaticon.com" target="_blank">aquí</a> en un tamaño de 512px, preferentemente con tono de color <em style="color:#62C09E;">#62C09E</em>.</small>
-							<img src="{{ $conocimiento->icono }}" alt="icono" style="width:50px">
+							<img src="{{ asset($conocimiento->icono) }}" alt="icono" style="width:50px">
 							<input type="file" id="icono" name="icono">
 						</div>
 					</div>

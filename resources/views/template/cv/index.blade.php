@@ -2,22 +2,22 @@
 
 @section('title', 'CV')
 
-@section('image_header', '/images/site/cv/images_header/image_hero_default.jpg')
+@section('image_header', asset('/images/site/cv/images_header/image_hero_default.jpg'))
 
-@section('image_profile', '/images/administrator/avatars/image_about_default.jpg')
+@section('image_profile', asset('/images/administrator/avatars/image_about_default.jpg'))
 
 @section('social_networks')
 	<a href="#" class="uk-icon-button uk-margin-small-right uk-margin-small-bottom">
-		<img src="/images/site/cv/images_social-networks/facebook.svg" alt="Facebook">
+		<img src="{{asset('/images/site/cv/images_social-networks/facebook.svg')}}" alt="Facebook">
 	</a>
 	<a href="#" class="uk-icon-button uk-margin-small-right uk-margin-small-bottom">
-		<img src="/images/site/cv/images_social-networks/twitter.svg" alt="Twitter">
+		<img src="{{asset('/images/site/cv/images_social-networks/twitter.svg')}}" alt="Twitter">
 	</a>
 	<a href="#" class="uk-icon-button uk-margin-small-right uk-margin-small-bottom">
-		<img src="/images/site/cv/images_social-networks/linkedin.svg" alt="Linkedin">
+		<img src="{{asset('/images/site/cv/images_social-networks/linkedin.svg')}}" alt="Linkedin">
 	</a>
 	<a href="#" class="uk-icon-button uk-margin-small-right uk-margin-small-bottom">
-		<img src="/images/site/cv/images_social-networks/github.svg" alt="Github">
+		<img src="{{asset('/images/site/cv/images_social-networks/github.svg')}}" alt="Github">
 	</a>
 @endsection
 
@@ -29,28 +29,28 @@
 @section('skills')
 	<div>
 		<div class="uk-card uk-card-body">
-			<img class="skills__image uk-width-small" src="/images/site/cv/images_skills/monitor.svg" alt="Desarolo Web">
+			<img class="skills__image uk-width-small" src="{{asset('/images/site/cv/images_skills/monitor.svg')}}" alt="Desarolo Web">
 			<p>Desarrollo Web</p>
 			<button class="uk-button uk-button-primary" uk-toggle="target: #web" type="button">Leer más</button>
 		</div>
 	</div>
 	<div>
 		<div class="uk-card uk-card-body">
-			<img class="skills__image uk-width-small" src="/images/site/cv/images_skills/app.svg" alt="Desarolo Móbil">
+			<img class="skills__image uk-width-small" src="{{asset('/images/site/cv/images_skills/app.svg')}}" alt="Desarolo Móbil">
 			<p>Desarolo Móbil</p>
 			<button class="uk-button uk-button-primary" uk-toggle="target: #mobil" type="button">Leer más</button>
 		</div>
 	</div>
 	<div>
 		<div class="uk-card uk-card-body">
-			<img class="skills__image uk-width-small" src="/images/site/cv/images_skills/server.svg" alt="Base de Datos">
+			<img class="skills__image uk-width-small" src="{{asset('/images/site/cv/images_skills/server.svg')}}" alt="Base de Datos">
 			<p>Base de Datos</p>
 			<button class="uk-button uk-button-primary" uk-toggle="target: #database" type="button">Leer más</button>
 		</div>
 	</div>
 	<div>
 		<div class="uk-card uk-card-body">
-			<img class="skills__image uk-width-small" src="/images/site/cv/images_skills/globe.svg" alt="Seguridad Informatica">
+			<img class="skills__image uk-width-small" src="{{asset('/images/site/cv/images_skills/globe.svg')}}" alt="Seguridad Informatica">
 			<p>Seguridad Informatica</p>
 			<button class="uk-button uk-button-primary" uk-toggle="target: #security" type="button">Leer más</button>
 		</div>
@@ -61,7 +61,7 @@
 <div>
 		<div class="uk-inline-clip uk-transition-toggle" tabindex="0">
 			<a href="#">
-				<img class="uk-width-medium" src="/images/site/cv/images_portfolio/portfolio.jpg" alt="Desarolo Web">
+				<img class="uk-width-medium" src="{{asset('/images/site/cv/images_portfolio/portfolio.jpg')}}" alt="Desarolo Web">
 				<div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
 					<p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 				</div>
@@ -71,7 +71,7 @@
 	<div>
 		<div class="uk-inline-clip uk-transition-toggle" tabindex="0">
 			<a href="#">
-				<img class="uk-width-medium" src="/images/site/cv/images_portfolio/portfolio.jpg" alt="Desarolo Móbil">
+				<img class="uk-width-medium" src="{{asset('/images/site/cv/images_portfolio/portfolio.jpg')}}" alt="Desarolo Móbil">
 				<div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
 					<p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 				</div>
@@ -81,7 +81,7 @@
 	<div>
 		<div class="uk-inline-clip uk-transition-toggle" tabindex="0">
 			<a href="#">
-				<img class="uk-width-medium" src="/images/site/cv/images_portfolio/portfolio.jpg" alt="Base de Datos">
+				<img class="uk-width-medium" src="{{asset('/images/site/cv/images_portfolio/portfolio.jpg')}}" alt="Base de Datos">
 				<div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
 					<p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 				</div>
@@ -91,7 +91,7 @@
 	<div>
 		<div class="uk-inline-clip uk-transition-toggle" tabindex="0">
 			<a href="#">
-				<img class="uk-width-medium" src="/images/site/cv/images_portfolio/portfolio.jpg" alt="Seguridad Informatica">
+				<img class="uk-width-medium" src="{{asset('/images/site/cv/images_portfolio/portfolio.jpg')}}" alt="Seguridad Informatica">
 				<div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
 					<p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 				</div>

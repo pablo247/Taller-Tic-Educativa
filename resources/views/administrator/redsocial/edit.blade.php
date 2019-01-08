@@ -59,7 +59,7 @@
 						<div class="form-group">
 							<label for="icono">Icono</label>
 							<small style="padding-left:3rem;">Los iconos los puedes descargar de <a href="https://www.flaticon.com">aquí</a> en un tamaño de 32px.</small>
-							<img src="{{ $redsocial->icono }}" alt="icono" style="padding-left:3rem;">
+							<img src="{{ asset($redsocial->icono) }}" alt="icono" style="padding-left:3rem;">
 							<input type="file" id="icono" name="icono">
 						</div>
 					</div>

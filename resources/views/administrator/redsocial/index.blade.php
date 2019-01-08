@@ -64,7 +64,7 @@
                                 <tr>
                                     <td>{{$redsocial->id}}</td>
                                     <td>{{$redsocial->titulo}}</td>
-                                    <td><img src="{{$redsocial->icono}}" alt="icono"></td>
+                                    <td><img src="{{asset($redsocial->icono)}}" alt="icono"></td>
                                     <td>
                                         <a href="{{ route('administrator.redsocial.edit', $redsocial->id) }}" class="btn btn-block btn-warning btn-sm">Editar</a>
                                     </td>

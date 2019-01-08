@@ -14,7 +14,7 @@
 	<article class="uk-article">
 
 		<div class="uk-card-media-left uk-cover-container">
-            <img src="{{ $article->imagen }}" alt="" uk-cover>
+            <img src="{{ asset($article->imagen) }}" alt="" uk-cover>
 			<canvas width="200" height="300"></canvas>
 		</div>
 

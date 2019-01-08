@@ -66,7 +66,7 @@
 					<span class="uk-badge day">30</span>
 					<div class="card uk-card uk-card-small uk-grid-collapse uk-margin" uk-grid>
 						<div class="card__image uk-card-media-left uk-cover-container uk-width-1-3@s">
-							<img src="/images/image_article.jpg" alt="" uk-cover>
+							<img src="{{asset('images/site/images_articles/image_article.jpg')}}" alt="" uk-cover>
 							<canvas width="200" height="150"></canvas>
 						</div>
 						<div class="uk-width-2-3@s">
@@ -82,7 +82,7 @@
 					<span class="uk-badge day">3</span>
 					<div class="card uk-card uk-card-small uk-grid-collapse uk-margin" uk-grid>
 						<div class="card__image uk-flex-last@s uk-card-media-right uk-cover-container uk-width-1-3@s">
-							<img src="/images/image_article.jpg" alt="" uk-cover>
+							<img src="{{asset('images/site/images_articles/image_article.jpg')}}" alt="" uk-cover>
 							<canvas width="200" height="150"></canvas>
 						</div>
 						<div class="uk-width-2-3@s">
@@ -98,7 +98,7 @@
 					<span class="uk-badge day">2</span>
 					<div class="card uk-card uk-card-small uk-grid-collapse uk-margin" uk-grid>
 						<div class="card__image uk-card-media-left uk-cover-container uk-width-1-3@s">
-							<img src="/images/image_article.jpg" alt="" uk-cover>
+							<img src="{{asset('images/site/images_articles/image_article.jpg')}}" alt="" uk-cover>
 							<canvas width="200" height="150"></canvas>
 						</div>
 						<div class="uk-width-2-3@s">
@@ -114,7 +114,7 @@
 					<span class="uk-badge day">1</span>
 					<div class="card uk-card uk-card-small uk-grid-collapse uk-margin" uk-grid>
 						<div class="card__image uk-flex-last@s uk-card-media-right uk-cover-container uk-width-1-3@s">
-							<img src="/images/image_article.jpg" alt="" uk-cover>
+							<img src="{{asset('images/site/images_articles/image_article.jpg')}}" alt="" uk-cover>
 							<canvas width="200" height="150"></canvas>
 						</div>
 						<div class="uk-width-2-3@s">
